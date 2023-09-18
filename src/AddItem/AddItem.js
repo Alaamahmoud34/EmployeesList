@@ -18,6 +18,7 @@ class AddItem extends Component {
         if (e.target.name.value === '') {
             return false;
         } else {
+            
             this.props.addItem(this.state);
             this.setState({
                 name: '',

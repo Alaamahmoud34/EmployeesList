@@ -4,7 +4,7 @@ import AddItem from './AddItem/AddItem';
 import {TodoItems} from './TodoItems/TodoItems';
 
 class App extends Component {
-  state = {
+ state = {
     items : [
       {id:1,name:'alaa',department:'products',age:25},
       {id:2,name:'aya',department:'products',age:24},
@@ -20,12 +20,11 @@ class App extends Component {
 
   addItem = (item) => {
     item.id = Math.random();
-    let items = this.state.items;
-    items.push(item);
-    this.setState({items})
+    this.setState({items:this.state.items.concat(item)})
   }
 
   render() {
+    console.log("state in render:", this.state.items)
     return (
       <div className='App container'>
         <h1 className='text-center'> Employees List</h1>
